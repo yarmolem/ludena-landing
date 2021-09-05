@@ -1,0 +1,131 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &_logo {
+    position: absolute;
+
+    & > div {
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      border-radius: 10px;
+      transform: rotate(-10deg) translate(-30%, -40%);
+    }
+
+    img {
+      left: 1rem;
+      top: 0.5rem;
+      position: absolute;
+    }
+  }
+
+  &_bars {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    div {
+      height: 5px;
+      width: 35px;
+      margin-bottom: 5px;
+      border-radius: 2px;
+      background-color: #fff;
+    }
+  }
+
+  &_background {
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+
+    display: grid;
+    place-items: center;
+
+    & > div {
+      width: 90%;
+      margin: 0 auto;
+      color: white;
+      margin-bottom: 5%;
+      text-align: center;
+      transform: translateY(50px);
+
+      h1 {
+        font-size: $text-xl;
+      }
+      h2 {
+        font-size: $text-base;
+        font-weight: 500;
+      }
+
+      button {
+        @include button(#fff) {
+          color: $primary;
+          font-weight: bold;
+          padding: 0.5em 2em;
+          border-radius: $rounded-3xl;
+        }
+      }
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &_play {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      transform: translateY(-50px);
+      width: 80px;
+      height: 80px;
+      display: grid;
+      color: white;
+      place-items: center;
+  
+      @include button($dark-gradient) {
+        padding: 1em;
+        border-radius: 50%;
+      }
+  
+      svg {
+        width: 40px;
+        height: 40px;
+        transform: translateX(4.5px);
+      }
+    }
+  }
+  
+  &_flotantes {
+    z-index: 1400;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+
+    button {
+      @include button {
+        padding: 0;
+      }
+    }
+
+    svg {
+      width: 45px;
+      margin-bottom: 5px;
+    }
+  }
+}

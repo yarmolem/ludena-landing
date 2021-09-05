@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/SVG/*": ["src/SVG/*"],
+      "@/data/*": ["src/data/*"],
+      "@/hooks/*": ["src/hooks/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/sections/*": ["src/sections/*"],
+      "@/components/*": ["src/components/*"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+$blue-200: #586ea5;
+$blue-300: rgba($color: #465ba5, $alpha: 0.65);
+$blue-400: #465ba5;
+$blue-500: #023373;
+$orange-500: #c46a47;
+$letter-color: #515151;
+
+$primary: $blue-500;
+$secundary: $orange-500;
+
+$dark-gradient: linear-gradient(to right, $blue-500, $blue-400);
+$light-gradient: linear-gradient(to right, $blue-200, $blue-300);

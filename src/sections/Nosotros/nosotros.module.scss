@@ -1,0 +1,62 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.nosotros {
+  // height: 100vh;
+  position: relative;
+
+  &_container {
+    padding-block: 1rem;
+    @include container;
+  }
+
+  &_item1 {
+    p {
+      font-size: $text-lg;
+    }
+  }
+  &_item2 {
+    p,
+    span {
+      font-size: $text-sm;
+    }
+  }
+
+  &_item1,
+  &_item2 {
+
+    p,
+    span {
+      text-align: justify;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+
+      h1 {
+        margin: 0;
+        min-width: 20px;
+        text-align: center;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &_image {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_triangle {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

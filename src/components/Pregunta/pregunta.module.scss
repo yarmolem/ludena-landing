@@ -1,0 +1,32 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.pregunta {
+  width: 85%;
+  color: #fff;
+  display: flex;
+  margin-left: auto;
+  font-weight: bold;
+  align-items: flex-start;  
+
+  padding: 1em;
+  margin-bottom: 1rem;
+  background: $light-gradient;
+  border-radius: 1.5rem 0rem 0rem 1.5rem;
+
+  span {
+    margin-right: 0.5rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: $text-sm;
+    line-height: 1.3em;
+
+    span {
+      margin-left: 0.5rem;
+      transform: translateY(5px);
+    }
+  }
+}

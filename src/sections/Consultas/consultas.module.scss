@@ -1,0 +1,52 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.consultas {
+  background: #ececec;
+}
+
+.container,
+.form {
+  width: 90%;
+  margin: 0 auto;
+  
+
+  p {
+    text-align: justify;
+  }
+}
+
+.form {
+  div {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-block: 0.3rem;
+      outline: none;
+      border: 1px solid transparent;
+    }
+  }
+
+  button[type="button"],
+  button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1rem
+  }
+
+  button[type="button"] {
+    margin-top: 1rem;
+    border-radius: 15px;
+    @include button(#fff);
+  }
+  button[type="submit"] {
+    @include button($orange-500){
+      color: white;
+      border-radius: 15px;
+    }
+  }
+}

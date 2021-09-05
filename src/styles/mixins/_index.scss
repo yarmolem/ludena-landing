@@ -1,0 +1,55 @@
+// Breakpoints
+
+@mixin break_ms {
+  @media screen and (min-width: 400px) {
+    @content;
+  }
+}
+@mixin break_sm {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+@mixin break_md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin break_lg {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin break_xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin break_xxl {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin break_3xl {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+// Container
+
+@mixin container($maxW: 1200px) {
+  width: 90%;
+  margin: 0 auto;
+  max-width: $maxW;
+}
+
+// buttons
+@mixin button($bg: transparent) {
+  border: 0;
+  outline: 0;
+  background: $bg;
+  cursor: pointer;
+  padding: 1em 3em;
+  @content;
+}
