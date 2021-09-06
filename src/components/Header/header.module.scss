@@ -3,12 +3,16 @@
 @import '@/styles/variables';
 
 .header {
-  padding: 2em;
+  padding: 2rem;
   color: white;
   background-image: $dark-gradient;
 
+  @include break_md {
+    padding: 2.5rem;
+  }
+
   h1 {
     margin: 0;
-    font-size: 1.9em;
+    font-size: 2rem;
   }
 }

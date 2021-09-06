@@ -24,7 +24,7 @@ const Consultas = () => {
         </p>
       </div>
 
-      <form className={styles.form}>
+      <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
         <div>
           <label htmlFor="">Nombres y apellidos</label>
           <input type="text" />
@@ -43,7 +43,9 @@ const Consultas = () => {
         </div>
         <div>
           <label htmlFor="">Rango de horario:</label>
-          <input type="text" />
+          <select>
+            <option value="1">option 1</option>
+          </select>
         </div>
 
         <button type="button">Adjuntar archivo</button>

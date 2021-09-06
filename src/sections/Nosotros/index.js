@@ -43,18 +43,21 @@ const Nosotros = () => {
               <div>
                 <h1>1</h1>
                 <span>
-                  Abogada – Universidad Nacional Mayor de San Marcos (Perú)
+                  Abogada – Universidad Nacional Mayor de San Marcos{' '}
+                  <strong>(Perú)</strong>
                 </span>
               </div>
               <div>
                 <h1>2</h1>
-                <span>Maestría en Derecho Procesal – UNMSM (Perú)</span>
+                <span>
+                  Maestría en Derecho Procesal – UNMSM <strong>(Perú)</strong>
+                </span>
               </div>
               <div>
                 <h1>3</h1>
                 <span>
-                  Maestría en Litigación Oral – California Western School of Law
-                  (USA)
+                  Maestría en Litigación Oral – California Western School of Law{' '}
+                  <strong>(USA)</strong>
                 </span>
               </div>
               <div>

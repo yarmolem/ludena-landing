@@ -1,8 +1,8 @@
 import styles from './pregunta.module.scss'
 
-const Pregunta = ({ num, label }) => {
+const Pregunta = ({ num, label, handleQuestion }) => {
   return (
-    <div className={styles.pregunta}>
+    <div onClick={handleQuestion} className={styles.pregunta}>
       <span>{num}.</span>
       <p>
         {label}

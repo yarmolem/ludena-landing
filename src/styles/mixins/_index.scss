@@ -53,3 +53,11 @@
   padding: 1em 3em;
   @content;
 }
+
+// perfect box
+@mixin perfectBox($size: 100px) {
+  width: $size;
+  height: $size;
+  max-width: $size;
+  max-height: $size;
+}

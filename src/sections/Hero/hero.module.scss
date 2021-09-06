@@ -7,6 +7,10 @@
   flex-direction: column;
   min-height: 100vh;
 
+  @include break_lg {
+    flex-direction: row;
+  }
+
   &_logo {
     position: absolute;
 
@@ -26,11 +30,16 @@
   }
 
   &_bars {
+    z-index: 1400;
     position: absolute;
     top: 1rem;
     right: 1rem;
 
+    @include button;
+    padding: 0em;
+
     div {
+      z-index: -1;
       height: 5px;
       width: 35px;
       margin-bottom: 5px;
@@ -47,6 +56,10 @@
     display: grid;
     place-items: center;
 
+    @include break_lg {
+      height: 100vh;
+    }
+
     & > div {
       width: 90%;
       margin: 0 auto;
@@ -55,12 +68,28 @@
       text-align: center;
       transform: translateY(50px);
 
+      @include break_lg {
+        width: 70%;
+      }
+
       h1 {
         font-size: $text-xl;
+        
+        @include break_md {
+          margin: 0;
+          margin-bottom: 1rem;
+          font-size: $text-3xl;
+        }
       }
       h2 {
         font-size: $text-base;
         font-weight: 500;
+
+        @include break_md {
+          margin: 0;
+          margin-bottom: 1rem;
+          font-size: $text-lg;
+        }
       }
 
       button {
@@ -69,6 +98,10 @@
           font-weight: bold;
           padding: 0.5em 2em;
           border-radius: $rounded-3xl;
+        }
+
+        @include break_md {
+          font-size: $text-xl;
         }
       }
     }
@@ -127,5 +160,18 @@
       width: 45px;
       margin-bottom: 5px;
     }
+  }
+}
+
+.image_mobile {
+  @include break_lg {
+    display: none;
+  }
+}
+
+.image_desktop {
+  display: none;
+  @include break_lg {
+    display: block;
   }
 }

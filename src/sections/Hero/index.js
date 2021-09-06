@@ -1,3 +1,7 @@
+import { useState } from 'react'
+// components
+import Sidebar from '@/components/Sidebar'
+
 // utils
 import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 
@@ -5,8 +9,16 @@ import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 import styles from './hero.module.scss'
 
 const Hero = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onOpen = () => setIsOpen(true)
+  const onClose = () => setIsOpen(false)
+
+  console.log(isOpen)
+
   return (
     <div className={styles.hero}>
+      <Sidebar {...{ isOpen, onClose }} />
       {/* LOGO */}
       <div className={styles.hero_logo}>
         <div />
@@ -19,20 +31,27 @@ const Hero = () => {
       </div>
 
       {/* BARS */}
-      <div className={styles.hero_bars}>
+      <button onClick={onOpen} className={styles.hero_bars}>
         <div />
         <div />
         <div />
-      </div>
+      </button>
 
       {/* Background */}
       <div className={styles.hero_background}>
-        <img src="/images/hero.png" alt="" />
+        <img src="/images/hero.png" alt="" className={styles.image_mobile} />
+        <img
+          src="/images/hero_desktop.png"
+          alt=""
+          className={styles.image_desktop}
+        />
         <div>
-          <h1>PROFESIONALES DEFENDIENDO TU PROFESIÓN</h1>
-          <h2>ADQUIERE TU SEGURO DE ASISTENCIA JURÍDICA A S/49.90</h2>
+          <h1>PROFESIONALES DEFENDIENDO TU VOCACIÓN</h1>
+          <h2>
+            ADQUIERE TU SEGURO DE ASISTENCIA JURÍDICA A <strong>S/49.90</strong>
+          </h2>
 
-          <button>CÓMO FUNCIONA</button>
+          <button>ABOGADOS 24/7</button>
         </div>
       </div>
 

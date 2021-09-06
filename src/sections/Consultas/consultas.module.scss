@@ -3,14 +3,23 @@
 @import '@/styles/variables';
 
 .consultas {
-  background: #ececec;
+  background: $bg-gray;
+}
+
+.container {
+  padding-block: 1rem;
+
+  p {
+    @include break_md {
+      font-size: $text-lg;
+    }
+  }
 }
 
 .container,
 .form {
   width: 90%;
   margin: 0 auto;
-  
 
   p {
     text-align: justify;
@@ -18,35 +27,63 @@
 }
 
 .form {
+  padding-block: 1rem;
+
   div {
     display: flex;
     flex-direction: column;
 
-    input {
+    label {
+      margin-bottom: 0.3rem;
+
+      @include break_md {
+        font-size: $text-lg;
+      }
+    }
+
+    input,
+    select {
+      background: white;
       padding: 0.8rem;
       border-radius: 8px;
-      margin-block: 0.3rem;
+      margin-bottom: 1rem;
       outline: none;
       border: 1px solid transparent;
     }
   }
 
-  button[type="button"],
-  button[type="submit"] {
+  button[type='button'],
+  button[type='submit'] {
     display: block;
     margin: 0 auto;
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
+
+    @include break_md {
+      margin-bottom: 2rem;
+    }
   }
 
-  button[type="button"] {
+  button[type='button'] {
+    @include button($btn-gray);
+    padding: 0.8em;
+    font-size: 14px;
     margin-top: 1rem;
-    border-radius: 15px;
-    @include button(#fff);
+    border-radius: 8px;
+
+    @include break_md {
+      font-size: 16px;
+    }
   }
-  button[type="submit"] {
-    @include button($orange-500){
-      color: white;
-      border-radius: 15px;
+  button[type='submit'] {
+    @include button($orange-500) {
+      color: #fff;
+      display: block;
+      margin: 0 auto;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      padding: 0.8rem 3rem;
+      font-size: $text-2xl;
+      border-radius: $rounded-3xl;
     }
   }
 }

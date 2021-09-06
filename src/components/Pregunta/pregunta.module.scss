@@ -11,18 +11,27 @@
   align-items: flex-start;  
 
   padding: 1em;
+  box-shadow: $shadow;
   margin-bottom: 1rem;
   background: $light-gradient;
   border-radius: 1.5rem 0rem 0rem 1.5rem;
 
   span {
     margin-right: 0.5rem;
+
+    @include break_md {
+      transform: translateY(3px);
+    }
   }
 
   p {
     margin: 0;
     font-size: $text-sm;
     line-height: 1.3em;
+
+    @include break_md {
+      font-size: $text-lg;
+    }
 
     span {
       margin-left: 0.5rem;

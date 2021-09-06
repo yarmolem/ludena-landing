@@ -1,0 +1,24 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+
+.goback {
+  display: flex;
+  margin-block: 1rem;
+  color: #323232;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include break_xl {
+    font-size: 1.5rem;
+  }
+
+  svg {
+    width: 20px;
+    margin-right: 0.5rem;
+
+    @include break_xl {
+      width: 30px;
+    }
+  }
+}
