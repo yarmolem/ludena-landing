@@ -9,11 +9,19 @@
   background: $primary;
   z-index: 1500;
 
+  @include break_lg {
+    display: none
+  }
+
   &_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 3rem;
+
+    span {
+      color: #fff;
+    }
   }
 
   &_bars {

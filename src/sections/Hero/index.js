@@ -1,8 +1,5 @@
-import { useState } from 'react'
-
 // components
 import NavLink from '@/components/NavLink'
-import Sidebar from '@/components/Sidebar'
 
 // utils
 import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
@@ -13,7 +10,6 @@ import styles from './hero.module.scss'
 const Hero = ({ onOpen }) => {
   return (
     <div id="hero-section" className={styles.hero}>
-
       {/* LOGO */}
       <div className={styles.hero_logo}>
         <div />
