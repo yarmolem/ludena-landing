@@ -2,6 +2,19 @@
 @import '@/styles/mixins';
 @import '@/styles/variables';
 
+.preguntas {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+
+  
+  @include break_lg {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .container {
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -9,6 +22,41 @@
   @include break_md {
     padding-top: 4rem;
     padding-bottom: 6rem;
+  }
+}
+
+.form {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+
+  img {
+    transform: translateX(-30px);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+}
+
+.header {
+  @include break_lg {
+    display: none;
+  }
+
+  &_desktop {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    h2 {
+      width: min-content;
+      text-align: center;
+      z-index: 1400;
+      color: white;
+      font-size: $text-6xl;
+    }
   }
 }
 

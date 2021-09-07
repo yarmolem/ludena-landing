@@ -1,3 +1,6 @@
+// utils
+import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
+
 // styles
 import styles from './footer.module.scss'
 
@@ -62,9 +65,15 @@ const Footer = () => {
         <h3>SÍGUENOS</h3>
 
         <div className={styles.social_item}>
-          <span>ICON</span>
-          <span>ICON</span>
-          <span>ICON</span>
+          <span>
+            <FacebookIcon />
+          </span>
+          <span>
+            <LinkedinIcon />
+          </span>
+          <span>
+            <WspIcon />
+          </span>
         </div>
       </div>
     </footer>

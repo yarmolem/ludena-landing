@@ -4,10 +4,10 @@
 .goback {
   display: flex;
   margin-block: 1rem;
-  color: #323232;
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  color: #d0d0cf;
 
   @include break_xl {
     font-size: 1.5rem;

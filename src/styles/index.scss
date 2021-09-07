@@ -1,3 +1,25 @@
 @import './reset';
 @import './fonts';
 @import './config';
+@import './mixins';
+
+@import '~swiper/components/navigation/navigation.scss';
+
+body {
+  @include container(1366px);
+}
+
+#nosotros_slider .swiper-container {
+  height: 600px;
+
+  @include break_md {
+    height: 500px;
+  }
+}
+
+#nosotros_slider .swiper-button-prev,
+#nosotros_slider .swiper-button-next {
+  top: unset;
+  bottom: 0px;
+  color: #484849;
+}

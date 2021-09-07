@@ -54,8 +54,19 @@ const Preguntas = () => {
   }
 
   return (
-    <div>
-      <Header title="PREGUNTAS FRECUENTES" />
+    <div className={styles.preguntas}>
+      <div className={styles.header}>
+        <Header title="PREGUNTAS FRECUENTES" />
+      </div>
+
+      <div className={styles.form}>
+        <img src="/images/preguntas_form.svg" alt="" />
+      </div>
+
+      <div className={styles.header_desktop}>
+        <h2>POR QUÉ ELEGIRNOS</h2>
+      </div>
+
       {isOpen ? RespuestaSide() : PreguntaSide()}
     </div>
   )

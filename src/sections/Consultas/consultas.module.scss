@@ -8,6 +8,7 @@
 
 .container {
   padding-block: 1rem;
+  @include container(900px);
 
   p {
     @include break_md {
@@ -26,8 +27,30 @@
   }
 }
 
-.form {
+.form_mobile {
+  @include break_lg {
+    display: none;
+  }
+}
+
+.form_desktop {
+  display: none;
+
+  @include break_lg {
+    display: block;
+  }
+
+  &_grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form_mobile,
+.form_desktop {
   padding-block: 1rem;
+  @include container(900px);
 
   div {
     display: flex;
@@ -42,13 +65,18 @@
     }
 
     input,
-    select {
+    select,
+    textarea {
       background: white;
       padding: 0.8rem;
       border-radius: 8px;
       margin-bottom: 1rem;
       outline: none;
       border: 1px solid transparent;
+    }
+
+    textarea {
+      min-height: 100px;
     }
   }
 
@@ -85,5 +113,14 @@
       font-size: $text-2xl;
       border-radius: $rounded-3xl;
     }
+  }
+}
+
+.textarea {
+  grid-row: auto / span 2;
+  
+  textarea {
+    height: 100%;
+    margin-bottom: 0;
   }
 }

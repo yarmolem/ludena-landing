@@ -33,6 +33,10 @@
       font-size: $text-lg;
     }
 
+    @include break_lg {
+      font-size: $text-xl;
+    }
+
     span {
       margin-left: 0.5rem;
       transform: translateY(5px);

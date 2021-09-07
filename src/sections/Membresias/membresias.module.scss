@@ -7,7 +7,7 @@
 }
 
 .container {
-  @include container(700px);
+  @include container(900px);
 
   &_content {
     margin-block: 2rem;
@@ -16,6 +16,10 @@
     @include break_md {
       margin-block: 3rem;
       font-size: $text-lg;
+    }
+    @include break_lg {
+      margin-block: 3rem;
+      font-size: $text-xl;
     }
   }
 }
@@ -32,6 +36,9 @@
     margin-bottom: 3rem;
     grid-template-columns: repeat(3, 150px);
   }
+  @include break_lg {
+    grid-template-columns: repeat(3, 200px);
+  }
 
   &_item {
     margin: 0 auto;
@@ -40,6 +47,10 @@
     background-image: $light-gradient;
 
     @include perfectBox(150px);
+
+    @include break_lg {
+      @include perfectBox(200px);
+    }
 
     & > div {
       height: 100%;
@@ -58,6 +69,9 @@
 
       @include break_md {
         font-size: $text-xs;
+      }
+      @include break_lg {
+        font-size: $text-sm;
       }
     }
 

@@ -10,9 +10,16 @@
   @include break_md {
     padding: 2.5rem;
   }
+  @include break_lg {
+    text-align: center;
+  }
 
-  h1 {
+  h2 {
     margin: 0;
     font-size: 2rem;
+    
+    @include break_lg {
+      font-size: $text-6xl;
+    }
   }
 }

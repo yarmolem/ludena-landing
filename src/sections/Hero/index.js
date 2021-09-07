@@ -7,14 +7,13 @@ import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 
 // styles
 import styles from './hero.module.scss'
+import Navbar from '@/components/Navbar'
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const onOpen = () => setIsOpen(true)
   const onClose = () => setIsOpen(false)
-
-  console.log(isOpen)
 
   return (
     <div className={styles.hero}>
@@ -39,10 +38,21 @@ const Hero = () => {
 
       {/* Background */}
       <div className={styles.hero_background}>
+        <nav className={styles.hero_nav1}>
+          <ul>
+            <li>
+              <span>NOSOTROS</span>
+            </li>
+            <li>
+              <span>MEMBRESÍAS</span>
+            </li>
+          </ul>
+        </nav>
+
         <img src="/images/hero.png" alt="" className={styles.image_mobile} />
         <img
-          src="/images/hero_desktop.png"
           alt=""
+          src="/images/hero_desktop.png"
           className={styles.image_desktop}
         />
         <div>
@@ -57,6 +67,19 @@ const Hero = () => {
 
       {/* Boton de play */}
       <div className={styles.hero_play}>
+        <nav className={styles.hero_nav2}>
+          <ul>
+            <li>
+              <span>POR QUÉ ELEGIRNOS</span>
+            </li>
+            <li>
+              <span>PREGUNTAS FRECUENTES</span>
+            </li>
+            <li>
+              <span>AGENDA UNA CITA</span>
+            </li>
+          </ul>
+        </nav>
         <button>
           <PlayIcon />
         </button>

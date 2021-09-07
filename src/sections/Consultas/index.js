@@ -24,7 +24,7 @@ const Consultas = () => {
         </p>
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} className={styles.form}>
+      <form onSubmit={(e) => e.preventDefault()} className={styles.form_mobile}>
         <div>
           <label htmlFor="">Nombres y apellidos</label>
           <input type="text" />
@@ -39,7 +39,7 @@ const Consultas = () => {
         </div>
         <div>
           <label htmlFor="">Mensaje</label>
-          <input type="text" />
+          <textarea />
         </div>
         <div>
           <label htmlFor="">Rango de horario:</label>
@@ -50,6 +50,40 @@ const Consultas = () => {
 
         <button type="button">Adjuntar archivo</button>
 
+        <button type="submit">AGENDA TU CITA</button>
+      </form>
+
+      <form
+        className={styles.form_desktop}
+        onSubmit={(e) => e.preventDefault()}
+      >
+        <section className={styles.form_desktop_grid}>
+          <div>
+            <label htmlFor="">Nombres y apellidos</label>
+            <input type="text" />
+          </div>
+          <div>
+            <label htmlFor="">Correo</label>
+            <input type="text" />
+          </div>
+          <div className={styles.textarea}>
+            <label htmlFor="">Mensaje</label>
+            <textarea />
+          </div>
+          <div>
+            <label htmlFor="">Celular</label>
+            <input type="text" />
+          </div>
+
+          <div>
+            <label htmlFor="">Rango de horario:</label>
+            <select>
+              <option value="1">option 1</option>
+            </select>
+          </div>
+        </section>
+
+        <button type="button">Adjuntar archivo</button>
         <button type="submit">AGENDA TU CITA</button>
       </form>
     </div>

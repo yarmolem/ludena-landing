@@ -3,6 +3,48 @@
 @import '@/styles/variables';
 
 .elegirnos {
+  overflow: hidden;
+  position: relative;
+
+  @include break_lg {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.header {
+  @include break_lg {
+    display: none;
+  }
+  
+  &_desktop {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+
+    h2 {
+      width: min-content;
+      text-align: center;
+      z-index: 1400;
+      color: white;
+      font-size: $text-6xl;
+    }
+  }
+}
+
+.form {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
 .grid {
@@ -30,6 +72,12 @@
       grid-template-rows: 150px 50px;
     }
 
+    @include break_lg {
+      max-width: 250px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 200px 50px;
+    }
+
     p {
       margin: 0;
       font-weight: 900;
@@ -37,6 +85,10 @@
 
       @include break_md {
         text-align: center;
+      }
+      @include break_lg {
+        text-align: center;
+        font-size:$text-xl ;
       }
     }
 
@@ -54,6 +106,11 @@
         margin-right: 0rem;
         box-shadow: $shadow-lg;
         @include perfectBox(150px);
+      }
+
+      @include break_lg {
+        text-align: center;
+        @include perfectBox(200px);
       }
 
       img {

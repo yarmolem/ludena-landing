@@ -23,7 +23,7 @@ export const membresias = [
   {
     src: '/images/carpeta.svg',
     label: 'Informes mensuales',
-    content: `Te mantenemos informado de tu situación 
+    content: `Te mantenemos informado de tu situación 
     con un lenguaje claro y 
     familiar.`
   },

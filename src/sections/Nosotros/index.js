@@ -1,90 +1,56 @@
-import Header from '@/components/Header'
+import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+
+// components
+import Header from '@/components/Header'
+import { Slide1, Slide2 } from './Slides'
 
 // styles
 import styles from './nosotros.module.scss'
 
+SwiperCore.use([Navigation])
+
 const Nosotros = () => {
   return (
     <div className={styles.nosotros}>
-      <Header title="NOSOTROS" />
-
-      <div className={styles.nosotros_container}>
-        <Swiper spaceBetween={20}>
-          <SwiperSlide>
-            <div className={styles.nosotros_item1}>
-              <p>
-                Somos una boutique legal especializada en solución de
-                controversias con un enfoque en Derecho Militar – Policial, lo
-                cual nos permite ser eficientes en la solución de necesidades de
-                nuestros clientes: Oficiales y Suboficiales de las Fuerzas
-                Armadas y PNP.
-              </p>
-
-              <p>
-                Nuestra estrategia de éxito consiste en brindarte un seguro de
-                defensa jurídica a un precio competitivo y con cobertura total
-                ante cualquier problema legal que puedas tener. Queremos
-                protegerte hablando un lenguaje claro y cercano, salvaguardando
-                tu interés ante cualquier situación que pueda vulnerar tus
-                bienes o derechos
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={styles.nosotros_item2}>
-              <p>
-                Nuestra firma está liderada por la abogada procesalista Ana
-                Claudia Ludeña Bejarano, quien respalda el Estudio con más de 6
-                años de experiencia en el ejercicio profesional vinculados al
-                ámbito militar - policial.
-              </p>
-
-              <div>
-                <h1>1</h1>
-                <span>
-                  Abogada – Universidad Nacional Mayor de San Marcos{' '}
-                  <strong>(Perú)</strong>
-                </span>
-              </div>
-              <div>
-                <h1>2</h1>
-                <span>
-                  Maestría en Derecho Procesal – UNMSM <strong>(Perú)</strong>
-                </span>
-              </div>
-              <div>
-                <h1>3</h1>
-                <span>
-                  Maestría en Litigación Oral – California Western School of Law{' '}
-                  <strong>(USA)</strong>
-                </span>
-              </div>
-              <div>
-                <h1>4</h1>
-                <span>
-                  Especialización en Derecho Disciplinario Militar Policial –
-                  Ilustre Colegio de Abogados de Lima
-                </span>
-              </div>
-              <div>
-                <h1>5</h1>
-                <span>
-                  Especialización en Derecho Administrativo – Pontificia
-                  Universidad Católica del Perú
-                </span>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+      <div className={styles.nosotros_header}>
+        <Header title="NOSOTROS" />
       </div>
 
-      <div className={styles.nosotros_image}>
-        <img src="/images/nosotros.png" alt="" />
+      <div className={styles.nosotros_header_desktop}>
+        <h2>NOSOTROS</h2>
       </div>
 
-      <div className={styles.nosotros_triangle}>
-        <img src="/images/triangulo-nosotros.svg" alt="" />
+      <div className={styles.grid}>
+        <div id="nosotros_slider" className={styles.nosotros_container}>
+          <Swiper navigation spaceBetween={20}>
+            <SwiperSlide>
+              <Slide1 />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Slide2 />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
+        <div className={styles.grid_item}>
+          <Slide1 />
+        </div>
+
+        <div className={styles.nosotros_image}>
+          <img src="/images/nosotros.png" alt="" />
+        </div>
+
+        <div className={styles.grid_item}>
+          <Slide2 />
+        </div>
+
+        <div className={styles.nosotros_triangle}>
+          <img src="/images/triangulo-nosotros.svg" alt="" />
+        </div>
+      </div>
+      <div className={styles.nosotros_form}>
+        <img src="/images/nosotros_form.svg" alt="" />
       </div>
     </div>
   )

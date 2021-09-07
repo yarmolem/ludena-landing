@@ -3,12 +3,37 @@
 @import '@/styles/variables';
 
 .nosotros {
-  // height: 100vh;
+  overflow: hidden;
   position: relative;
+
+  &_header {
+    @include break_lg {
+      display: none;
+    }
+
+    &_desktop {
+      padding: 2rem;
+      color: white;
+    
+      @include break_md {
+        padding: 2.5rem;
+      }
+    
+      h2 {
+        margin: 0;
+        font-size: $text-6xl;
+      }
+    }
+  }
+  
 
   &_container {
     padding-block: 1rem;
     @include container;
+
+    @include break_lg {
+      display: none;
+    }
   }
 
   &_item1 {
@@ -18,16 +43,12 @@
       @include break_md {
         font-size: $text-xl;
       }
+      @include break_lg {
+        color: white;
+      }
     }
   }
   &_item2 {
-    // p,
-    // span {
-    //   font-size: $text-sm;
-    //   @include break_md {
-    //     font-size: $text-lg;
-    //   }
-    // }
     p, span {
       font-size: $text-lg;
       
@@ -62,12 +83,22 @@
   &_image {
     width: 100%;
 
+    @include break_lg {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     img {
-      // transform:  translateY(-4px);
       width: 100%;
       display: block;
       margin: 0 auto;
       max-width: 400px;
+      
+      @include break_lg {
+        max-width: 500px;
+        align-self: flex-end;
+        justify-self: flex-end;
+      }
     }
   }
 
@@ -76,5 +107,46 @@
     position: absolute;
     bottom: -5px;
     width: 100%;
+
+    @include break_lg {
+      display: none;
+    }
+  }
+
+  &_form {
+    display: none;
+    transform: translateX(-300px);
+    top: -1px;
+    position: absolute;
+    width: 90%;
+    height: 100vh;
+    z-index: -1;
+
+    @include break_lg {
+      display: block;
+      transform: translateX(-310px);
+    }
+
+  }
+}
+
+.grid {
+  
+  @include break_lg {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+
+  &_item {
+    display: none;
+    
+    @include break_lg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

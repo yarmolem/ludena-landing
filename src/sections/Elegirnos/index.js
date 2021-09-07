@@ -6,7 +6,17 @@ import styles from './elegirnos.module.scss'
 const Elegirnos = () => {
   return (
     <div className={styles.elegirnos}>
-      <Header title="POR QUÉ ELEGIRNOS" />
+      <div className={styles.header}>
+        <Header title="POR QUÉ ELEGIRNOS" />
+      </div>
+
+      <div className={styles.form}>
+        <img src="/images/elegirnos_form.svg" alt="" />
+      </div>
+
+      <div className={styles.header_desktop}>
+        <h2>POR QUÉ ELEGIRNOS</h2>
+      </div>
 
       <div className={styles.grid}>
         <div className={styles.grid_item}>
