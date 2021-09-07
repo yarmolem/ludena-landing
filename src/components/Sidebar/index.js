@@ -1,11 +1,9 @@
-import Link from 'next/link'
-
 // Terceros
+import NavLink from '../NavLink'
 import { motion } from 'framer-motion'
 
 // styles
 import styles from './sidebar.module.scss'
-import NavLink from '../NavLink'
 
 const variants = {
   open: {
