@@ -7,7 +7,6 @@ import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 
 // styles
 import styles from './hero.module.scss'
-import Navbar from '@/components/Navbar'
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false)
