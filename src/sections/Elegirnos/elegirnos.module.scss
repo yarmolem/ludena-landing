@@ -9,7 +9,7 @@
   @include break_lg {
     display: grid;
     gap: 5rem;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -19,25 +19,38 @@
   }
   
   &_desktop {
+    display: none;
     width: 100%;
     height: 100%;
-    display: grid;
     place-items: center;
+
+    @include break_lg {
+      display: grid;
+    }
 
     h2 {
       width: min-content;
       text-align: center;
       z-index: 1400;
       color: white;
-      font-size: $text-6xl;
+      font-size: $text-4xl;
+
+      @include break_xl {
+        font-size: $text-6xl;
+      }
     }
   }
 }
 
 .form {
+  display: none;
   position: absolute;
   height: 100%;
   width: 50%;
+
+  @include break_lg {
+    display: block;
+  }
 
   img {
     width: 100%;
@@ -55,9 +68,15 @@
   gap: 1rem;
 
   @include break_md {
-    gap: 3rem;
+    gap: 1rem;
     padding-block: 4rem;
     grid-template-columns: 1fr 1fr;
+  }
+  @include break_lg {
+    transform: translateX(50px);
+  }
+  @include break_xl {
+    transform: translateX(100px);
   }
 
   &_item {

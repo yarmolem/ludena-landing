@@ -3,18 +3,39 @@
 @import '@/styles/variables';
 
 .pregunta {
-  width: 85%;
+  width: 75%;
   color: #fff;
   display: flex;
   margin-left: auto;
   font-weight: bold;
-  align-items: flex-start;  
+  align-items: flex-start;
+  cursor: pointer;  
 
-  padding: 1em;
+  // padding: 1em;
+  padding-block: 1rem;
+  padding-inline: 2rem;
   box-shadow: $shadow;
   margin-bottom: 1rem;
   background: $light-gradient;
-  border-radius: 1.5rem 0rem 0rem 1.5rem;
+  border-radius: 3rem 0rem 0rem 3rem;
+
+  @include break_lg {
+    &:nth-child(1) {
+      width: 80%;
+    }
+    &:nth-child(2) {
+      width: 77%;
+    }
+    &:nth-child(3) {
+      width: 74%;
+    }
+    &:nth-child(4) {
+      width: 71%;
+    }
+    &:nth-child(5) {
+      width: 68%;
+    }
+  }
 
   span {
     margin-right: 0.5rem;
@@ -33,9 +54,9 @@
       font-size: $text-lg;
     }
 
-    @include break_lg {
-      font-size: $text-xl;
-    }
+    // @include break_lg {
+    //   font-size: $text-xl;
+    // }
 
     span {
       margin-left: 0.5rem;

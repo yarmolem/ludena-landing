@@ -40,11 +40,29 @@
     grid-template-columns: repeat(3, 200px);
   }
 
+  &_content {
+    transform: rotateY(180deg);
+    justify-content: flex-start !important;
+
+    p {
+      margin: 0;
+      // text-align: justify;
+      padding: 1rem 0.5rem;
+    }
+  }
+
   &_item {
+    // backface-visibility: hidden;
     margin: 0 auto;
     box-shadow: $shadow;
     border-radius: $rounded-3xl;
     background-image: $light-gradient;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
 
     @include perfectBox(150px);
 
@@ -52,20 +70,17 @@
       @include perfectBox(200px);
     }
 
-    & > div {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
+    p,
+    span {
+      text-align: center;
     }
 
     p,
     span {
       color: #fff;
       font-size: 10px;
-      padding: 0 1rem;
-      text-align: center;
+      padding: 1rem;
+      
 
       @include break_md {
         font-size: $text-xs;
@@ -75,12 +90,8 @@
       }
     }
 
-    p {
-      padding: 0.5rem 0.8rem;
-    }
-
     img {
-      margin-bottom: 0.5rem;
+      // margin-bottom: 0.5rem;
       width: 40%;
       height: 40%;
       object-fit: contain;

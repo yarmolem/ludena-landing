@@ -11,7 +11,7 @@ import styles from './membresias.module.scss'
 
 const Membresias = () => {
   return (
-    <div className={styles.membresias}>
+    <div id="membresias-section" className={styles.membresias}>
       <Header title="MEMBRESÍA" />
 
       <div className={styles.container}>

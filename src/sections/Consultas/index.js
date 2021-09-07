@@ -4,7 +4,7 @@ import styles from './consultas.module.scss'
 
 const Consultas = () => {
   return (
-    <div className={styles.consultas}>
+    <div id="consultas-section" className={styles.consultas}>
       <Header title="¿TIENES MÁS CONSULTAS?" />
 
       <div className={styles.container}>

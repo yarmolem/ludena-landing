@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 
 // styles
 import styles from './sidebar.module.scss'
+import NavLink from '../NavLink'
 
 const variants = {
   open: {
@@ -44,41 +45,33 @@ const Sidebar = ({ isOpen, onClose }) => {
         animate={isOpen ? 'open' : 'closed'}
       >
         <nav className={styles.navegation}>
+          {/* <img width={200} height={200} src="/logo/logo.svg" alt="" /> */}
+
           <ul>
             <li>
-              <Link href="#">
-                <a onClick={onClose}>
-                  NOSOTROS <span>{'>'}</span>
-                </a>
-              </Link>
+              <NavLink offset={0} onClick={onClose} to="nosotros-section">
+                NOSOTROS <span>{'>'}</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="#">
-                <a onClick={onClose}>
-                  MEMBRESÍA <span>{'>'}</span>
-                </a>
-              </Link>
+              <NavLink offset={-80} onClick={onClose} to="membresias-section">
+                MEMBRESÍA <span>{'>'}</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="#">
-                <a onClick={onClose}>
-                  POR QUÉ ELEGIRNOS <span>{'>'}</span>
-                </a>
-              </Link>
+              <NavLink offset={-80} onClick={onClose} to="elegirnos-section">
+                POR QUÉ ELEGIRNOS <span>{'>'}</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="#">
-                <a onClick={onClose}>
-                  PREGUNTAS FRECUENTES <span>{'>'}</span>
-                </a>
-              </Link>
+              <NavLink offset={-80} onClick={onClose} to="preguntas-section">
+                PREGUNTAS FRECUENTES <span>{'>'}</span>
+              </NavLink>
             </li>
             <li>
-              <Link href="#">
-                <a onClick={onClose}>
-                  ¿TIENES MÁS CONSULTAS? <span>{'>'}</span>
-                </a>
-              </Link>
+              <NavLink offset={-80} onClick={onClose} to="consultas-section">
+                ¿TIENES MÁS CONSULTAS? <span>{'>'}</span>
+              </NavLink>
             </li>
           </ul>
         </nav>

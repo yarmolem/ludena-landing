@@ -9,7 +9,7 @@
 
   
   @include break_lg {
-    display: grid;
+    // display: grid;
     gap: 5rem;
     grid-template-columns: 1fr 1fr;
   }
@@ -25,42 +25,53 @@
   }
 }
 
-.form {
-  position: absolute;
-  height: 100%;
-  width: 50%;
+.grid {
+  min-height: 584px;
 
-  img {
-    transform: translateX(-30px);
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: bottom;
+  @include break_lg {
+    display: grid;
+    // grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 2fr;
   }
 }
 
 .header {
-  @include break_lg {
-    display: none;
+  &_mobile {
+    display: block;
+    
+    @include break_lg {
+      display: none;
+    }
   }
 
   &_desktop {
     width: 100%;
     height: 100%;
-    display: grid;
+    display: none;
     place-items: center;
+
+    @include break_lg {
+      display: grid;
+    }
 
     h2 {
       width: min-content;
       text-align: center;
       z-index: 1400;
       color: white;
-      font-size: $text-6xl;
+      font-size: $text-4xl;
+
+      @include break_xl {
+        font-size: $text-6xl;
+      }
     }
   }
 }
 
 .respuesta {
+  width: 90%;
+  margin-left: auto;
+
   padding-top: 2rem;
   padding-bottom: 4rem;
 
@@ -68,33 +79,47 @@
     padding-top: 4rem;
     padding-bottom: 6rem;
   }
-
-  &_goback {
-    margin-left: 7.5%;
+  @include break_lg {
+    width: 75%;
   }
 
   &_label {
-    width: 85%;
+    width: 100%;
     color: #fff;
     display: flex;
     margin-left: auto;
     font-weight: bold;
     align-items: flex-start;  
   
-    padding: 1em;
     box-shadow: $shadow;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     background: $light-gradient;
-    border-radius: 1.5rem 0rem 0rem 1.5rem;
+    border-radius: 4rem 0rem 0rem 4rem;
 
     h2 {
       font-size: 16px;
+      padding-block: 0.5rem;
+      padding-inline: 2rem;
+
+      @include break_md {
+        font-size: $text-lg;
+      }
     }
   }
 
   &_content {
-    width: 85%;
+    // border: 1px solid black;
     margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: justify;
+
+    p {
+      margin: 0;
+    }
+    
+    @include break_lg {
+      padding-left: 3rem;
+    }
   }
 }

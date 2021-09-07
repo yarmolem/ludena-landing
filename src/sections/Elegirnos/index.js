@@ -5,13 +5,9 @@ import styles from './elegirnos.module.scss'
 
 const Elegirnos = () => {
   return (
-    <div className={styles.elegirnos}>
+    <div id="elegirnos-section" className={styles.elegirnos}>
       <div className={styles.header}>
         <Header title="POR QUÉ ELEGIRNOS" />
-      </div>
-
-      <div className={styles.form}>
-        <img src="/images/elegirnos_form.svg" alt="" />
       </div>
 
       <div className={styles.header_desktop}>

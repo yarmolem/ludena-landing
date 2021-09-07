@@ -1,0 +1,87 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+
+.terminos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1700;
+  display: grid;
+  place-items: center;
+
+  &_overlay {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  &_box {
+    width: 90vw;
+    height: 90vh;
+    background-color: #fff;
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 2rem;
+    color: white;
+    background: #263168;
+    text-transform: uppercase;
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+
+      @include break_md {
+        font-size: 1.8rem;
+      }
+    }
+
+    button {
+      @include button(transparent);
+      display: block;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      margin-left: auto;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &_content {
+    padding-bottom: 2rem;
+    color: $letter-color;
+    font-size: 0.8rem;
+    text-align: justify;
+    overflow-y: scroll;
+    padding: 0 1rem 1rem 1rem;
+    max-height: calc(90vh - 130px - 1rem);
+
+    @include break_md {
+      font-size: 1rem;
+    }
+    @include break_lg {
+      padding: 0 3rem 3rem 3rem;
+      max-height: calc(90vh - 150px - 1rem);
+    }
+    @include break_xl {
+      font-size: 1.2rem;
+    }
+    @include break_3xl {
+      font-size: 1.3vw;
+      padding: 0 3vw 3vw 3vw;
+      max-height: calc(90vh - 110px - 3vw);
+    }
+  }
+}

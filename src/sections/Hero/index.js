@@ -1,5 +1,7 @@
 import { useState } from 'react'
+
 // components
+import NavLink from '@/components/NavLink'
 import Sidebar from '@/components/Sidebar'
 
 // utils
@@ -8,24 +10,14 @@ import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 // styles
 import styles from './hero.module.scss'
 
-const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const onOpen = () => setIsOpen(true)
-  const onClose = () => setIsOpen(false)
-
+const Hero = ({ onOpen }) => {
   return (
-    <div className={styles.hero}>
-      <Sidebar {...{ isOpen, onClose }} />
+    <div id="hero-section" className={styles.hero}>
+
       {/* LOGO */}
       <div className={styles.hero_logo}>
         <div />
-        <img
-          width={100}
-          height={100}
-          src="/logo/logo-text.svg"
-          alt="Logo Ludeña abogados"
-        />
+        <img src="/logo/logo-text.svg" alt="Logo Ludeña abogados" />
       </div>
 
       {/* BARS */}
@@ -40,24 +32,22 @@ const Hero = () => {
         <nav className={styles.hero_nav1}>
           <ul>
             <li>
-              <span>NOSOTROS</span>
+              <NavLink to="nosotros-section">NOSOTROS</NavLink>
             </li>
             <li>
-              <span>MEMBRESÍAS</span>
+              <NavLink to="membresias-section">
+                <span>MEMBRESÍAS</span>
+              </NavLink>
             </li>
           </ul>
         </nav>
 
         <img src="/images/hero.png" alt="" className={styles.image_mobile} />
-        <img
-          alt=""
-          src="/images/hero_desktop.png"
-          className={styles.image_desktop}
-        />
         <div>
           <h1>PROFESIONALES DEFENDIENDO TU VOCACIÓN</h1>
           <h2>
-            ADQUIERE TU SEGURO DE ASISTENCIA JURÍDICA A <strong>S/49.90</strong>
+            ADQUIERE TU SEGURO DE ASISTENCIA JURÍDICA <br /> A{' '}
+            <strong>S/49.90</strong>
           </h2>
 
           <button>ABOGADOS 24/7</button>
@@ -69,13 +59,13 @@ const Hero = () => {
         <nav className={styles.hero_nav2}>
           <ul>
             <li>
-              <span>POR QUÉ ELEGIRNOS</span>
+              <NavLink to="elegirnos-section">POR QUÉ ELEGIRNOS</NavLink>
             </li>
             <li>
-              <span>PREGUNTAS FRECUENTES</span>
+              <NavLink to="preguntas-section">PREGUNTAS FRECUENTES</NavLink>
             </li>
             <li>
-              <span>AGENDA UNA CITA</span>
+              <NavLink to="consultas-section">AGENDA UNA CITA</NavLink>
             </li>
           </ul>
         </nav>
@@ -86,12 +76,12 @@ const Hero = () => {
 
       {/* Flotantes */}
       <div className={styles.hero_flotantes}>
-        <button>
+        <a href="https://ludena.vercel.app" target="_blank" rel="noreferrer">
           <WebIcon />
-        </button>
-        <button>
+        </a>
+        <a href="#">
           <WhatsappIcon />
-        </button>
+        </a>
       </div>
     </div>
   )

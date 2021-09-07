@@ -1,12 +1,21 @@
 // utils
 import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
+import { useState } from 'react'
+import Terminos from '../Terminos'
 
 // styles
 import styles from './footer.module.scss'
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onOpen = () => setIsOpen(true)
+  const onClose = () => setIsOpen(false)
+
   return (
     <footer className={styles.footer}>
+      <Terminos {...{ isOpen, onClose }} />
+
       <div className={styles.item}>
         <h3>CONÓCENOS</h3>
 
@@ -34,7 +43,9 @@ const Footer = () => {
             <span>Preguntas frecuentes</span>
           </li>
           <li>
-            <span>Políticas de privacidad</span>
+            <button className={styles.terminos} onClick={onOpen}>
+              Políticas de privacidad
+            </button>
           </li>
           <li>
             <span>Términos y condiciones</span>

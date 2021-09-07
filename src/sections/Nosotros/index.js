@@ -12,13 +12,9 @@ SwiperCore.use([Navigation])
 
 const Nosotros = () => {
   return (
-    <div className={styles.nosotros}>
+    <div id="nosotros-section" className={styles.nosotros}>
       <div className={styles.nosotros_header}>
         <Header title="NOSOTROS" />
-      </div>
-
-      <div className={styles.nosotros_header_desktop}>
-        <h2>NOSOTROS</h2>
       </div>
 
       <div className={styles.grid}>
@@ -34,6 +30,9 @@ const Nosotros = () => {
         </div>
 
         <div className={styles.grid_item}>
+          <div className={styles.nosotros_header_desktop}>
+            <h2>NOSOTROS</h2>
+          </div>
           <Slide1 />
         </div>
 
@@ -49,9 +48,9 @@ const Nosotros = () => {
           <img src="/images/triangulo-nosotros.svg" alt="" />
         </div>
       </div>
-      <div className={styles.nosotros_form}>
+      {/* <div className={styles.nosotros_form}>
         <img src="/images/nosotros_form.svg" alt="" />
-      </div>
+      </div> */}
     </div>
   )
 }

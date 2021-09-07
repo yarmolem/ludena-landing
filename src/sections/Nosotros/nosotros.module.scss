@@ -12,15 +12,17 @@
     }
 
     &_desktop {
-      padding: 2rem;
+      display: none;
+      // padding: 2rem;
       color: white;
     
-      @include break_md {
-        padding: 2.5rem;
+      @include break_lg {
+        display: block;
       }
     
       h2 {
         margin: 0;
+        margin-bottom: 5rem;
         font-size: $text-6xl;
       }
     }
@@ -37,6 +39,11 @@
   }
 
   &_item1 {
+    p,
+    span {
+      text-align: left;
+    }
+
     p {
       font-size: $text-lg;
       
@@ -49,6 +56,11 @@
     }
   }
   &_item2 {
+    p,
+    span {
+      text-align: left;
+    }
+
     p, span {
       font-size: $text-lg;
       
@@ -60,11 +72,6 @@
 
   &_item1,
   &_item2 {
-
-    p,
-    span {
-      text-align: justify;
-    }
 
     div {
       display: flex;
@@ -115,8 +122,8 @@
 
   &_form {
     display: none;
-    transform: translateX(-300px);
-    top: -1px;
+    top: 0px;
+    left: 0;
     position: absolute;
     width: 90%;
     height: 100vh;
@@ -124,20 +131,29 @@
 
     @include break_lg {
       display: block;
-      transform: translateX(-310px);
+      transform: translateX(-220px);
     }
 
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .grid {
+  position: relative;
   
   @include break_lg {
     width: 90%;
-    margin: 0 auto;
     display: grid;
-    gap: 3rem;
+    margin: 0 auto;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+    @include break_xl {
+      min-height: 100vh;
+      gap: 3rem;
+    }
   }
 
   &_item {
@@ -145,8 +161,8 @@
     
     @include break_lg {
       display: flex;
-      align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
   }
 }

@@ -6,7 +6,8 @@
 @import '~swiper/components/navigation/navigation.scss';
 
 body {
-  @include container(1366px);
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 #nosotros_slider .swiper-container {

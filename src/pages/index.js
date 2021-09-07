@@ -8,8 +8,18 @@ import Elegirnos from '@/sections/Elegirnos'
 import Preguntas from '@/sections/Preguntas'
 import Consultas from '@/sections/Consultas'
 import Membresias from '@/sections/Membresias'
+import { useInView } from 'react-intersection-observer'
+import Sidebar from '@/components/Sidebar'
+import { useState } from 'react'
+import Navbar from '@/components/Navbar'
 
 const Home = () => {
+  const { ref, inView } = useInView()
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onOpen = () => setIsOpen(true)
+  const onClose = () => setIsOpen(false)
+
   return (
     <div>
       <Head>
@@ -18,13 +28,56 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero />
-      <Nosotros />
+      <Sidebar {...{ isOpen, onClose }} />
+      <Navbar {...{ onOpen, inView }} />
+
+      <div className="forma1">
+        <img src="/images/form_1.png" alt="" />
+        <div ref={ref}>
+          <Hero {...{ onOpen }} />
+        </div>
+        <Nosotros />
+      </div>
       <Membresias />
-      <Elegirnos />
-      <Preguntas />
+      <div className="forma2">
+        <img src="/images/form_2.png" alt="" />
+        <Elegirnos />
+        <Preguntas />
+      </div>
       <Consultas />
       <Footer />
+
+      <style jsx>{`
+        .forma1,
+        .forma2 {
+          position: relative;
+        }
+
+        .forma1 img,
+        .forma2 img {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+          .forma1 img,
+          .forma2 img {
+            display: block;
+          }
+        }
+
+        .forma1 img {
+          width: 65%;
+          height: 100%;
+        }
+
+        .forma2 img {
+          width: 50%;
+          height: 100%;
+        }
+      `}</style>
     </div>
   )
 }

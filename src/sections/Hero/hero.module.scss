@@ -8,7 +8,7 @@ $height: 800px;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   max-height: $height;
 
   @include break_lg {
@@ -27,6 +27,18 @@ $height: 800px;
     ul {
       li {
         margin-inline: 2rem;
+
+        @include break_xl {
+          margin-inline: 3.5vw;
+        }
+
+        span {
+          font-size: $text-lg;
+
+          @include break_xl {
+            font-size: $text-2xl;
+          }
+        }
       }
     }
   }
@@ -41,6 +53,22 @@ $height: 800px;
         width: 120px;
         text-align: center;
         margin-inline: 1.5rem;
+
+        @include break_xl {
+          margin-inline: 4vw;
+        }
+
+        @include break_3xl {
+          margin-inline: 100px;
+        }
+
+        span {
+          font-size: $text-lg;
+
+          @include break_xl {
+            font-size: $text-2xl;
+          }
+        }
       }
     }
   }
@@ -74,12 +102,24 @@ $height: 800px;
       background: #fff;
       border-radius: 10px;
       transform: rotate(-10deg) translate(-30%, -40%);
+
+      @include break_lg {
+        width: 250px;
+        height: 250px;
+      }
     }
 
     img {
       left: 1rem;
       top: 0.5rem;
       position: absolute;
+      width: 100px;
+      height: 100px;
+
+      @include break_lg {
+        width: 130px;
+        height: 130px;
+      }
     }
   }
 
@@ -132,7 +172,7 @@ $height: 800px;
       
       @include break_lg {
         width: 70%;
-        transform: translateY(200px) translateX(-50px);
+        transform: translateY(100px) translateX(-50px);
       }
 
       h1 {
@@ -141,7 +181,7 @@ $height: 800px;
         @include break_md {
           margin: 0;
           margin-bottom: 1rem;
-          font-size: $text-3xl;
+          font-size: $text-2xl;
         }
       }
       h2 {
@@ -150,7 +190,7 @@ $height: 800px;
 
         @include break_md {
           margin: 0;
-          margin-bottom: 1rem;
+          margin-bottom: 2rem;
           font-size: $text-lg;
         }
       }
@@ -218,7 +258,7 @@ $height: 800px;
     position: fixed;
     flex-direction: column;
 
-    button {
+    a {
       @include button {
         padding: 0;
       }

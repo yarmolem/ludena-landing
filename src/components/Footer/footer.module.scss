@@ -60,3 +60,13 @@
     }
   }
 }
+
+.terminos {
+  @include button(transparent);
+  padding: 0;
+  color: #fff;
+
+  &:hover {
+    color: #9d9d9d;
+  }
+}
