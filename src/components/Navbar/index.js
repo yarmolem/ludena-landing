@@ -23,7 +23,7 @@ const Navbar = ({ onOpen, inView }) => {
         <NavLink to="hero-section">
           <img src="/logo/logo.svg" alt="Logo Ludeña Abogados" />
         </NavLink>
-        {/* 
+        {/*
         <NavLink offset={10} to="nosotros-section">
           NOSOTROS
         </NavLink>
