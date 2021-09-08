@@ -17,15 +17,19 @@ const MembresiaItem = ({ src, label, content }) => {
     onToggle()
   }
 
+  const handleHover = () => {
+    initAnimation()
+  }
+
   const Iconside = () => (
-    <div className={styles.grid_item}>
+    <div className={styles.grid_front}>
       <img src={src} alt="" />
       <span>{label}</span>
     </div>
   )
 
   const ContentSide = () => (
-    <div className={`${styles.grid_item} ${isOpen ? styles.grid_content : ''}`}>
+    <div className={`${styles.grid_back} ${isOpen ? styles.grid_content : ''}`}>
       <p>{content}</p>
     </div>
   )
@@ -44,6 +48,8 @@ const MembresiaItem = ({ src, label, content }) => {
       }}
       animate={isContent ? 'open' : 'close'}
       onClick={handleFlip}
+      onMouseEnter={handleHover}
+      // onMouseLeave={handleFlip}
     >
       {isOpen ? ContentSide() : Iconside()}
     </motion.div>

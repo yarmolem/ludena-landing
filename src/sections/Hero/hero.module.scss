@@ -89,6 +89,10 @@ $height: 800px;
       li {
         font-size: 20px;
         list-style: none;
+
+        span {
+          cursor: pointer;
+        }
       }
     }
   }

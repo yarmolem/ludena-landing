@@ -31,9 +31,7 @@ const Hero = ({ onOpen }) => {
               <NavLink to="nosotros-section">NOSOTROS</NavLink>
             </li>
             <li>
-              <NavLink to="membresias-section">
-                <span>MEMBRESÍAS</span>
-              </NavLink>
+              <NavLink to="membresias-section">MEMBRESÍAS</NavLink>
             </li>
           </ul>
         </nav>

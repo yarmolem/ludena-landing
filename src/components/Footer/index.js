@@ -1,6 +1,7 @@
 // utils
 import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
 import { useState } from 'react'
+import NavLink from '../NavLink'
 import Terminos from '../Terminos'
 
 // styles
@@ -21,16 +22,16 @@ const Footer = () => {
 
         <ul>
           <li>
-            <span>Nosotros</span>
+            <NavLink to="nosotros-section">Nosotros</NavLink>
           </li>
           <li>
-            <span>Membresía</span>
+            <NavLink to="membresias-section">Membresías</NavLink>
           </li>
           <li>
-            <span>Por qué elegirnos</span>
+            <NavLink to="elegirnos-section">Por qué elegirnos</NavLink>
           </li>
           <li>
-            <span>Agendar una cita</span>
+            <NavLink to="consultas-section">Agendar una cita</NavLink>
           </li>
         </ul>
       </div>
