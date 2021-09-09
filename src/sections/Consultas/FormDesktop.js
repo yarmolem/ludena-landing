@@ -1,4 +1,5 @@
 import Spinner from '@/components/Spinner'
+import { CheckIcon } from '@/SVG/icons'
 import styles from './consultas.module.scss'
 // import { horarios } from './horarios'
 
@@ -11,6 +12,7 @@ const initialState = {
 }
 
 const FormDesktop = ({
+  file = {},
   loading,
   isEmpty,
   form = initialState,
@@ -25,6 +27,8 @@ const FormDesktop = ({
   //     </option>
   //   ))
   // }
+
+  const isEmptyFile = !file.name
 
   return (
     <form
@@ -58,7 +62,7 @@ const FormDesktop = ({
           />
         </div>
         <div className={styles.textarea}>
-          <label htmlFor="mensaje_desktop">Mensaje</label>
+          <label htmlFor="mensaje_desktop">Breve descripción del caso:</label>
           <textarea
             required
             id="mensaje_desktop"
@@ -99,7 +103,9 @@ const FormDesktop = ({
           id="file_button_desktop"
           onChange={handleFile}
         />
-        <label htmlFor="file_button_desktop">Adjuntar archivo</label>
+        <label htmlFor="file_button_desktop">
+          Adjuntar archivo <span>{!isEmptyFile ? <CheckIcon /> : null}</span>
+        </label>
       </div>
 
       <button disabled={isEmpty() || loading} type="submit">

@@ -41,6 +41,7 @@ const Consultas = () => {
   }
 
   const reset = () => {
+    setFile({})
     setForm({
       email: '',
       nombres: '',
@@ -75,13 +76,14 @@ const Consultas = () => {
     })
 
     if (res?.data?.CreateConsultas) {
-      notify()
       reset()
+      notify()
       console.log(res)
     }
   }
 
   const propsForm = {
+    file,
     form,
     loading,
     isEmpty,

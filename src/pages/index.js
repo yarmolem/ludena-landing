@@ -16,6 +16,7 @@ import Preguntas from '@/sections/Preguntas'
 import Consultas from '@/sections/Consultas'
 import Membresias from '@/sections/Membresias'
 import Publicidad from '@/sections/Publicidad'
+import ModalPublicidad from '@/components/ModalPublicidad'
 
 const Home = () => {
   // Inview
@@ -25,7 +26,6 @@ const Home = () => {
   // States
   const [isOpen, setIsOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [isFirtTime, setIsFirtTime] = useState(true)
 
   useEffect(() => {
     if (window.matchMedia('(min-width: 992px)').matches) {
@@ -35,17 +35,6 @@ const Home = () => {
 
   const onOpen = () => setIsOpen(true)
   const onClose = () => setIsOpen(false)
-
-  const renderModalPublicidad = () => {
-    return (
-      <Modal
-        onClose={() => setIsFirtTime(false)}
-        isOpen={preguntasInView.inView && isFirtTime}
-      >
-        <Publicidad isMobile={false} onClose={() => setIsFirtTime(false)} />
-      </Modal>
-    )
-  }
 
   return (
     <div>
@@ -76,7 +65,7 @@ const Home = () => {
         <div ref={preguntasInView.ref}>
           <Preguntas />
         </div>
-        {isMobile ? renderModalPublicidad() : null}
+        {isMobile ? <ModalPublicidad inView={preguntasInView.inView} /> : null}
       </div>
       <Consultas />
       <Footer />

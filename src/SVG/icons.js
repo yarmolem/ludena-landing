@@ -156,3 +156,39 @@ export const WspIcon = (props) => {
     </svg>
   )
 }
+export const CheckIcon = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fas"
+      data-icon="check"
+      className="prefix__svg-inline--fa prefix__fa-check prefix__fa-w-16"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+      />
+    </svg>
+  )
+}
+export const YoutubeIcon = (props) => {
+  return (
+    <svg
+      aria-hidden="true"
+      data-prefix="fab"
+      data-icon="youtube"
+      className="prefix__svg-inline--fa prefix__fa-youtube prefix__fa-w-18"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 576 512"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+      />
+    </svg>
+  )
+}

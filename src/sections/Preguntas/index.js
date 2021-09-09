@@ -63,9 +63,9 @@ const Preguntas = () => {
       >
         {preguntas.map((p) => (
           <Pregunta
-            key={`pregunta-${p.num}`}
             {...p}
-            {...{ handleQuestion: () => handleQuestion(p) }}
+            key={`pregunta-${p.num}`}
+            handleQuestion={() => handleQuestion(p)}
           />
         ))}
       </motion.div>

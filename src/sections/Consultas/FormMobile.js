@@ -1,4 +1,5 @@
 import Spinner from '@/components/Spinner'
+import { CheckIcon } from '@/SVG/icons'
 import styles from './consultas.module.scss'
 // import { horarios } from './horarios'
 
@@ -11,6 +12,7 @@ const initialState = {
 }
 
 const FormMobile = ({
+  file,
   loading,
   isEmpty,
   form = initialState,
@@ -25,6 +27,8 @@ const FormMobile = ({
   //     </option>
   //   ))
   // }
+
+  const isEmptyFile = !file.name
 
   return (
     <form
@@ -96,7 +100,9 @@ const FormMobile = ({
           id="file_button_mobile"
           onChange={handleFile}
         />
-        <label htmlFor="file_button_mobile">Adjuntar archivo</label>
+        <label htmlFor="file_button_mobile">
+          Adjuntar archivo <span>{!isEmptyFile ? <CheckIcon /> : null}</span>
+        </label>
       </div>
 
       <button disabled={isEmpty() || loading} type="submit">
