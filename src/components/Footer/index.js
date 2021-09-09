@@ -1,9 +1,12 @@
-// utils
-import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
 import { useState } from 'react'
-import LinkExterno from '../LinkExterno'
+
+// components
 import NavLink from '../NavLink'
 import Terminos from '../Terminos'
+import LinkExterno from '../LinkExterno'
+
+// utils
+import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
 
 // styles
 import styles from './footer.module.scss'

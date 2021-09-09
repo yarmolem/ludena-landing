@@ -7,7 +7,6 @@ export const CreateConsultas = gql`
       email
       mensaje
       celular
-      rangoHorario
       archivo
     }
   }
