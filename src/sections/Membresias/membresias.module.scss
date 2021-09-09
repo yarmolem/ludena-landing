@@ -51,52 +51,81 @@
     }
   }
 
-  &_item {
-    // backface-visibility: hidden;
-    margin: 0 auto;
-    box-shadow: $shadow;
-    border-radius: $rounded-3xl;
-    background-image: $light-gradient;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    user-select: none;
-
+  &_card {
+    perspective: 1000px;
+    background-color: transparent;
+    
     @include perfectBox(150px);
 
     @include break_lg {
       @include perfectBox(200px);
     }
 
-    p,
-    span {
+    &_inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
       text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
     }
 
-    p,
-    span {
-      color: #fff;
-      font-size: 10px;
-      padding: 1rem;
-      
-
-      @include break_md {
-        font-size: $text-xs;
-      }
-      @include break_lg {
-        font-size: $text-sm;
-      }
+    &:hover &_inner {
+      transform: rotateY(180deg);
     }
 
-    img {
-      // margin-bottom: 0.5rem;
-      width: 40%;
-      height: 40%;
-      object-fit: contain;
+    &_back {
+      transform: rotateY(180deg);
+    }
+
+    &_back,
+    &_front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari */
+      backface-visibility: hidden;
+
+      margin: 0 auto;
+      box-shadow: $shadow;
+      border-radius: $rounded-3xl;
+      background-image: $light-gradient;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      user-select: none;
+  
+      p,
+      span {
+        text-align: center;
+      }
+  
+      p,
+      span {
+        color: #fff;
+        font-size: 10px;
+        padding: 1rem;
+        
+  
+        @include break_md {
+          font-size: $text-xs;
+        }
+        @include break_lg {
+          font-size: $text-sm;
+        }
+      }
+  
+      img {
+        // margin-bottom: 0.5rem;
+        width: 40%;
+        height: 40%;
+        object-fit: contain;
+      }
     }
   }
+  
+
 }
 
 .button {
