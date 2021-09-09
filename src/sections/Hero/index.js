@@ -1,13 +1,19 @@
+import { motion } from 'framer-motion'
 // components
-import LinkExterno from '@/components/LinkExterno'
 import NavLink from '@/components/NavLink'
-import { linkwsp } from '@/data/linkwsp'
+import LinkExterno from '@/components/LinkExterno'
 
 // utils
 import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
 
 // styles
 import styles from './hero.module.scss'
+
+const linkVariants = {
+  hover: {
+    x: ['0%', '5%', '-5%', '0%']
+  }
+}
 
 const Hero = ({ onOpen }) => {
   return (
@@ -29,12 +35,12 @@ const Hero = ({ onOpen }) => {
       <div className={styles.hero_background}>
         <nav className={styles.hero_nav1}>
           <ul>
-            <li>
+            <motion.li variants={linkVariants} whileHover="hover">
               <NavLink to="nosotros-section">NOSOTROS</NavLink>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={linkVariants} whileHover="hover">
               <NavLink to="membresias-section">MEMBRESÍAS</NavLink>
-            </li>
+            </motion.li>
           </ul>
         </nav>
 
@@ -47,7 +53,9 @@ const Hero = ({ onOpen }) => {
           </h2>
 
           <LinkExterno>
-            <button>ABOGADOS 24/7</button>
+            <motion.button variants={linkVariants} whileHover="hover">
+              ABOGADOS 24/7
+            </motion.button>
           </LinkExterno>
         </div>
       </div>
@@ -56,15 +64,15 @@ const Hero = ({ onOpen }) => {
       <div className={styles.hero_play}>
         <nav className={styles.hero_nav2}>
           <ul>
-            <li>
+            <motion.li variants={linkVariants} whileHover="hover">
               <NavLink to="elegirnos-section">POR QUÉ ELEGIRNOS</NavLink>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={linkVariants} whileHover="hover">
               <NavLink to="preguntas-section">PREGUNTAS FRECUENTES</NavLink>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={linkVariants} whileHover="hover">
               <NavLink to="consultas-section">AGENDA UNA CITA</NavLink>
-            </li>
+            </motion.li>
           </ul>
         </nav>
         <button>

@@ -1,14 +1,21 @@
+import { motion } from 'framer-motion'
 import styles from './pregunta.module.scss'
 
 const Pregunta = ({ num, label, handleQuestion }) => {
   return (
-    <div onClick={handleQuestion} className={styles.pregunta}>
+    <motion.div
+      whileHover={{
+        x: ['0%', '5%', '0%']
+      }}
+      onClick={handleQuestion}
+      className={styles.pregunta}
+    >
       <span>{num}.</span>
       <p>
         {label}
         <span>{'▼'}</span>
       </p>
-    </div>
+    </motion.div>
   )
 }
 

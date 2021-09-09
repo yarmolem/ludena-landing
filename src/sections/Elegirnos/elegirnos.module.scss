@@ -81,6 +81,7 @@
 
   &_item {
     display: grid;
+    cursor: default;
     gap: 1rem;
     align-items: center;
     grid-template-columns: 100px 200px;
