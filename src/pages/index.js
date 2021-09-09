@@ -6,7 +6,6 @@ import { useInView } from 'react-intersection-observer'
 
 // sections
 import Hero from '@/sections/Hero'
-import Modal from '@/components/Modal'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
