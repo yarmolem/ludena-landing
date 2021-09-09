@@ -31,7 +31,12 @@
 
     li {
       list-style: none;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
 
       span {
         cursor: pointer;
@@ -45,6 +50,9 @@
 }
 
 .social {
+  @include break_lg {
+    margin-left: 1rem;
+  }
   &_item {
     display: flex;
 

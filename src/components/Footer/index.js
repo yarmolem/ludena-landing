@@ -1,6 +1,7 @@
 // utils
 import { FacebookIcon, LinkedinIcon, WspIcon } from '@/SVG/icons'
 import { useState } from 'react'
+import LinkExterno from '../LinkExterno'
 import NavLink from '../NavLink'
 import Terminos from '../Terminos'
 
@@ -59,16 +60,22 @@ const Footer = () => {
 
         <ul>
           <li>
-            <span>(Teléfono)</span>
+            <a href="tel:+51969745751">
+              <span>969745751</span>
+            </a>
           </li>
           <li>
-            <span>(Mail)</span>
+            <LinkExterno href="mailto:aludena@estudioludena.com">
+              <span>aludena@estudioludena.com</span>
+            </LinkExterno>
           </li>
           <li>
-            <span>(Dirección)</span>
+            <span>Avenida Benavides N° 1944, piso 9, Miraflores</span>
           </li>
           <li>
-            <span>(Web)</span>
+            <LinkExterno href="https://ludena.vercel.app">
+              <span>www.ludena.vercel.app</span>
+            </LinkExterno>
           </li>
         </ul>
       </div>

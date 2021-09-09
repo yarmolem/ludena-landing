@@ -1,0 +1,105 @@
+@import '@/styles/colors';
+@import '@/styles/mixins';
+@import '@/styles/variables';
+
+.publicidad {
+  position: relative;
+  padding: 0;
+  text-align: center;
+  background: $primary;
+
+  @include break_lg {
+    width: 600px;
+    height: 300px;
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+  }
+
+  & > div {
+    z-index: 2;
+    padding: 1.5rem;
+
+    button {
+      z-index: 2;
+      @include button($secundary);
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: $rounded-3xl;
+  
+      @include break_lg {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+
+    @include break_md {
+      font-size: 1.2rem;
+    }
+    @include break_lg {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.textshadow {
+  text-shadow: #323232 0.1em 0.1em 0.2em;
+}
+
+.puntos_right {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-position: right;
+  right: 0rem;
+  object-fit: contain;
+}
+.puntos_left {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0rem;
+  object-position: right;
+  object-fit: contain;
+  transform: rotate(180deg);
+}
+
+.mobile {
+  display: block;
+
+  @include break_lg {
+    display: none;
+  }
+}
+
+.btnClose {
+  z-index: 2;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  @include button($secundary);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: $rounded-3xl;
+}

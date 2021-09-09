@@ -8,6 +8,7 @@ import { membresias } from '@/data/membresias'
 
 // styles
 import styles from './membresias.module.scss'
+import LinkExterno from '@/components/LinkExterno'
 
 const Membresias = () => {
   return (
@@ -31,8 +32,9 @@ const Membresias = () => {
             <MembresiaItem key={`Membresia-${i}`} {...m} />
           ))}
         </div>
-
-        <button className={styles.button}>HAZ TU CONSULTA</button>
+        <LinkExterno>
+          <button className={styles.button}>HAZ TU CONSULTA</button>
+        </LinkExterno>
       </div>
     </div>
   )

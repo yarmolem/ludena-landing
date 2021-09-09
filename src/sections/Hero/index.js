@@ -1,5 +1,7 @@
 // components
+import LinkExterno from '@/components/LinkExterno'
 import NavLink from '@/components/NavLink'
+import { linkwsp } from '@/data/linkwsp'
 
 // utils
 import { PlayIcon, WebIcon, WhatsappIcon } from '@/SVG/icons'
@@ -44,7 +46,9 @@ const Hero = ({ onOpen }) => {
             <strong>S/49.90</strong>
           </h2>
 
-          <button>ABOGADOS 24/7</button>
+          <LinkExterno>
+            <button>ABOGADOS 24/7</button>
+          </LinkExterno>
         </div>
       </div>
 
@@ -70,12 +74,12 @@ const Hero = ({ onOpen }) => {
 
       {/* Flotantes */}
       <div className={styles.hero_flotantes}>
-        <a href="https://ludena.vercel.app" target="_blank" rel="noreferrer">
+        <LinkExterno href="https://ludena.vercel.app">
           <WebIcon />
-        </a>
-        <a href="#">
+        </LinkExterno>
+        <LinkExterno>
           <WhatsappIcon />
-        </a>
+        </LinkExterno>
       </div>
     </div>
   )

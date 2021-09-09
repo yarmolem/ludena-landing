@@ -17,42 +17,40 @@ const MembresiaItem = ({ src, label, content }) => {
     onToggle()
   }
 
-  const handleHover = () => {
-    initAnimation()
-  }
-
   const Iconside = () => (
-    <div className={styles.grid_front}>
+    <div className={styles.grid_item}>
       <img src={src} alt="" />
       <span>{label}</span>
     </div>
   )
 
   const ContentSide = () => (
-    <div className={`${styles.grid_back} ${isOpen ? styles.grid_content : ''}`}>
+    <div className={`${styles.grid_item} ${isOpen ? styles.grid_content : ''}`}>
       <p>{content}</p>
     </div>
   )
 
   return (
-    <motion.div
-      variants={{
-        open: {
-          rotateY: 180,
-          transition: { ease: 'easeInOut', duration: 1.5 }
-        },
-        close: {
-          rotateY: 0,
-          transition: { ease: 'easeInOut', duration: 1.5 }
-        }
-      }}
-      animate={isContent ? 'open' : 'close'}
-      onClick={handleFlip}
-      onMouseEnter={handleHover}
-      // onMouseLeave={handleFlip}
-    >
-      {isOpen ? ContentSide() : Iconside()}
-    </motion.div>
+    <div>
+      <motion.div
+        variants={{
+          open: {
+            rotateY: 180,
+            transition: { ease: 'easeInOut', duration: 1.5 }
+          },
+          close: {
+            rotateY: 0,
+            transition: { ease: 'easeInOut', duration: 1.5 }
+          }
+        }}
+        animate={isContent ? 'open' : 'close'}
+      >
+        {isOpen ? ContentSide() : Iconside()}
+      </motion.div>
+      <button className={styles.btn_flip} onClick={handleFlip}>
+        Ver mas
+      </button>
+    </div>
   )
 }
 

@@ -15,6 +15,10 @@ $height: 800px;
     flex-direction: row;
   }
 
+  @include break_xl {
+    max-height: 800px;
+  }
+
   &_nav1 {
     top: 1rem;
     left: 9rem;
@@ -151,7 +155,7 @@ $height: 800px;
   }
 
   &_background {
-    height: 70vh;
+    height: 75vh;
     max-height: $height;
     min-height: 560px;
     overflow: hidden;
@@ -162,8 +166,8 @@ $height: 800px;
 
     @include break_lg {
       width: 70vw;
-      max-width: 930px;
       height: 100vh;
+      max-width: 930px;
     }
 
     & > div {
@@ -172,15 +176,15 @@ $height: 800px;
       color: white;
       margin-bottom: 5%;
       text-align: center;
-      transform: translateY(50px);
+      transform: translateY(80px);
       
       @include break_lg {
         width: 70%;
-        transform: translateY(100px) translateX(-50px);
+        transform: translateY(180px) translateX(-50px);
       }
 
       h1 {
-        font-size: $text-xl;
+        font-size: $text-base;
         
         @include break_md {
           margin: 0;
@@ -189,12 +193,12 @@ $height: 800px;
         }
       }
       h2 {
-        font-size: $text-base;
+        font-size: $text-sm;
         font-weight: 500;
 
         @include break_md {
           margin: 0;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
           font-size: $text-lg;
         }
       }

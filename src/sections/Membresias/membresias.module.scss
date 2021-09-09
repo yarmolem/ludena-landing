@@ -51,9 +51,8 @@
     }
   }
 
-  &_front,
-  &_back {
-    backface-visibility: hidden;
+  &_item {
+    // backface-visibility: hidden;
     margin: 0 auto;
     box-shadow: $shadow;
     border-radius: $rounded-3xl;
@@ -63,7 +62,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
+    user-select: none;
 
     @include perfectBox(150px);
 
@@ -115,4 +114,18 @@
   @include break_md {
     margin-bottom: 3rem;
   }
+}
+
+.btn_flip {
+  cursor: pointer;
+  border: 0;
+  width: 100px;
+  height: 30px;
+  outline: none;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  background-color: $primary;
+  border-radius: $rounded-3xl;
 }
