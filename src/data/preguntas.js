@@ -12,7 +12,7 @@ export const preguntas = [
   {
     num: 2,
     label: '¿En qué horario puedo agendar mi consulta online?',
-    content: 'En el horario de lunes a viernes de 10am a 1pm y 3pm a 5pm.'
+    content: 'En el horario de lunes a viernes de 9am a 1pm y 2pm a 7pm.'
   },
   {
     num: 3,
