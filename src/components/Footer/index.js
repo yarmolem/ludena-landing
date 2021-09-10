@@ -76,8 +76,8 @@ const Footer = () => {
             <span>Avenida Benavides N° 1944, piso 9, Miraflores</span>
           </li>
           <li>
-            <LinkExterno href="https://ludena.vercel.app">
-              <span>www.ludena.vercel.app</span>
+            <LinkExterno href="https://www.estudioludena.com">
+              <span>www.estudioludena.com</span>
             </LinkExterno>
           </li>
         </ul>
