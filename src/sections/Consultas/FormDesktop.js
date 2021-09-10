@@ -1,3 +1,4 @@
+import ErrorMsg from '@/components/ErrorMsg'
 import Spinner from '@/components/Spinner'
 import { CheckIcon } from '@/SVG/icons'
 import styles from './consultas.module.scss'
@@ -15,6 +16,7 @@ const FormDesktop = ({
   file = {},
   loading,
   isEmpty,
+  errors = { ok: true },
   form = initialState,
   handleFile = () => {},
   handleChange = () => {},
@@ -49,6 +51,7 @@ const FormDesktop = ({
             value={form.nombres}
             onChange={handleChange}
           />
+          <ErrorMsg errors={errors} name="nombres" />
         </div>
         <div>
           <label htmlFor="email_desktop">Correo</label>
@@ -60,6 +63,7 @@ const FormDesktop = ({
             value={form.email}
             onChange={handleChange}
           />
+          <ErrorMsg errors={errors} name="email" />
         </div>
         <div className={styles.textarea}>
           <label htmlFor="mensaje_desktop">Breve descripción del caso:</label>
@@ -70,6 +74,7 @@ const FormDesktop = ({
             value={form.mensaje}
             onChange={handleChange}
           />
+          <ErrorMsg errors={errors} name="mensaje" />
         </div>
         <div>
           <label htmlFor="celular_desktop">Celular</label>
@@ -81,6 +86,7 @@ const FormDesktop = ({
             value={form.celular}
             onChange={handleChange}
           />
+          <ErrorMsg errors={errors} name="celular" />
         </div>
 
         {/* <div>
@@ -108,7 +114,7 @@ const FormDesktop = ({
         </label>
       </div>
 
-      <button disabled={isEmpty() || loading} type="submit">
+      <button disabled={loading} type="submit">
         AGENDA TU CITA {loading ? <Spinner /> : null}
       </button>
     </form>

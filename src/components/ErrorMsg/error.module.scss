@@ -1,0 +1,13 @@
+.error {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+  color: lighten($color: red, $amount: 30);
+
+  svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 0.3rem;
+  }
+}

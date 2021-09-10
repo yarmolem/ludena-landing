@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { useMutation } from '@apollo/client'
 
@@ -12,6 +12,7 @@ import { CreateConsultas } from '../../graphql/documents'
 
 // styles
 import styles from './consultas.module.scss'
+import { consultaValidation } from 'src/validation/consulta'
 
 const Consultas = () => {
   // graphql
@@ -19,6 +20,8 @@ const Consultas = () => {
 
   // states
   const [file, setFile] = useState({})
+  const [isDirty, setIsDirty] = useState(false)
+  const [errors, setErrors] = useState({ ok: true })
   const [form, setForm] = useState({
     email: '',
     nombres: '',
@@ -27,8 +30,14 @@ const Consultas = () => {
     // rangoHorario: '0'
   })
 
+  useEffect(() => {
+    if (isDirty) {
+      const errorObj = consultaValidation(form)
+      setErrors(errorObj)
+    }
+  }, [isDirty, form])
+
   const notify = () => {
-    console.log('TOAST')
     toast.success('Tu consulta ha sido enviada')
   }
 
@@ -62,7 +71,9 @@ const Consultas = () => {
   }
 
   const handleSubmit = async () => {
-    if (isEmpty()) return
+    setIsDirty(true)
+    const errorObj = consultaValidation(form)
+    if (!errorObj.ok) return setErrors(errorObj)
 
     const payload = {
       variables: {
@@ -85,6 +96,7 @@ const Consultas = () => {
   const propsForm = {
     file,
     form,
+    errors,
     loading,
     isEmpty,
     handleFile,

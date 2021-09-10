@@ -1,3 +1,4 @@
+import ErrorMsg from '@/components/ErrorMsg'
 import Spinner from '@/components/Spinner'
 import { CheckIcon } from '@/SVG/icons'
 import styles from './consultas.module.scss'
@@ -15,6 +16,7 @@ const FormMobile = ({
   file,
   loading,
   isEmpty,
+  errors = { ok: true },
   form = initialState,
   handleFile = () => {},
   handleChange = () => {},
@@ -41,50 +43,49 @@ const FormMobile = ({
       <div>
         <label htmlFor="nombres_mobile">Nombres y apellidos</label>
         <input
-          required
           id="nombres_mobile"
           type="text"
           name="nombres"
           value={form.nombres}
           onChange={handleChange}
         />
+        <ErrorMsg errors={errors} name="nombres" />
       </div>
       <div>
         <label htmlFor="email_mobile">Correo</label>
         <input
-          required
           id="email_mobile"
           type="email"
           name="email"
           value={form.email}
           onChange={handleChange}
         />
+        <ErrorMsg errors={errors} name="email" />
       </div>
       <div>
         <label htmlFor="celular_mobile">Celular</label>
         <input
-          required
           id="celular_mobile"
           type="number"
           name="celular"
           value={form.celular}
           onChange={handleChange}
         />
+        <ErrorMsg errors={errors} name="celular" />
       </div>
       <div>
         <label htmlFor="mensaje_mobile">Mensaje</label>
         <textarea
-          required
           id="mensaje_mobile"
           name="mensaje"
           value={form.mensaje}
           onChange={handleChange}
         />
+        <ErrorMsg errors={errors} name="mensaje" />
       </div>
       {/* <div>
         <label htmlFor="">Rango de horario:</label>
         <select
-          required
           name="rangoHorario"
           onChange={handleChange}
           value={form.rangoHorario}
@@ -105,7 +106,7 @@ const FormMobile = ({
         </label>
       </div>
 
-      <button disabled={isEmpty() || loading} type="submit">
+      <button disabled={loading} type="submit">
         AGENDA TU CITA {loading ? <Spinner /> : null}
       </button>
     </form>
