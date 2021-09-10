@@ -32,10 +32,10 @@ export const consultaValidation = ({ email, nombres, mensaje, celular }) => {
     }
   }
 
-  if (!isLength(celular, { min: 9 })) {
+  if (!isLength(celular, { min: 9, max: 9 })) {
     errors.ok = false
     errors.celular = {
-      msg: 'Su número telefonico debe tener mas de 9 digitos'
+      msg: 'Su número telefonico debe tener 9 digitos'
     }
   }
 

@@ -41,11 +41,15 @@ const Footer = () => {
       </div>
 
       <div className={styles.item}>
-        <h3>TÉRMINOS Y CONDICIONES</h3>
+        <h3>
+          TÉRMINOS Y <br /> CONDICIONES
+        </h3>
 
         <ul>
           <li>
-            <span>Preguntas frecuentes</span>
+            <NavLink offset={-80} to="preguntas-section">
+              Preguntas frecuentes
+            </NavLink>
           </li>
           <li>
             <button className={styles.terminos} onClick={onOpen}>

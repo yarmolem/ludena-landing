@@ -13,9 +13,9 @@
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(150px, 238px));
 
-  // @include break_md {
-  //   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  // }
+  @include break_xl {
+    grid-template-columns: repeat(auto-fit, minmax(238px, 250px));
+  }
 }
 
 .item,
