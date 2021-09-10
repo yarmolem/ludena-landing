@@ -44,7 +44,6 @@ const FormDesktop = ({
         <div>
           <label htmlFor="nombres_desktop">Nombres y apellidos</label>
           <input
-            required
             id="nombres_desktop"
             type="text"
             name="nombres"
@@ -56,7 +55,6 @@ const FormDesktop = ({
         <div>
           <label htmlFor="email_desktop">Correo</label>
           <input
-            required
             id="email_desktop"
             type="email"
             name="email"
@@ -68,7 +66,6 @@ const FormDesktop = ({
         <div className={styles.textarea}>
           <label htmlFor="mensaje_desktop">Breve descripción del caso:</label>
           <textarea
-            required
             id="mensaje_desktop"
             name="mensaje"
             value={form.mensaje}
@@ -79,7 +76,6 @@ const FormDesktop = ({
         <div>
           <label htmlFor="celular_desktop">Celular</label>
           <input
-            required
             id="celular_desktop"
             type="number"
             name="celular"
@@ -92,7 +88,6 @@ const FormDesktop = ({
         {/* <div>
           <label htmlFor="">Rango de horario:</label>
           <select
-            required
             name="rangoHorario"
             onChange={handleChange}
             value={form.rangoHorario}
