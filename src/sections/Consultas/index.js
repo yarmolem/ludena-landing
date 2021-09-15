@@ -19,7 +19,7 @@ const Consultas = () => {
   const [createConsulta, { loading }] = useMutation(CreateConsultas)
 
   // states
-  const [file, setFile] = useState({})
+  const [file, setFile] = useState(null)
   const [isDirty, setIsDirty] = useState(false)
   const [errors, setErrors] = useState({ ok: true })
   const [form, setForm] = useState({
@@ -50,7 +50,9 @@ const Consultas = () => {
   }
 
   const reset = () => {
-    setFile({})
+    setFile(null)
+    setIsDirty(false)
+    setErrors({ ok: true })
     setForm({
       email: '',
       nombres: '',
@@ -77,9 +79,12 @@ const Consultas = () => {
 
     const payload = {
       variables: {
-        input: { ...form },
-        archivo: file
+        input: { ...form }
       }
+    }
+
+    if (file) {
+      payload.variables.archivo = file
     }
 
     const res = await createConsulta(payload).catch((err) => {

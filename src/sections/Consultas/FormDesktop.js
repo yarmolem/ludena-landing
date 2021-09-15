@@ -30,7 +30,7 @@ const FormDesktop = ({
   //   ))
   // }
 
-  const isEmptyFile = !file.name
+  const isEmptyFile = !file
 
   return (
     <form

@@ -30,7 +30,9 @@ const FormMobile = ({
   //   ))
   // }
 
-  const isEmptyFile = !file.name
+  const isEmptyFile = !file
+
+  console.log(isEmptyFile)
 
   return (
     <form
@@ -98,8 +100,8 @@ const FormMobile = ({
         <input
           hidden
           type="file"
-          id="file_button_mobile"
           onChange={handleFile}
+          id="file_button_mobile"
         />
         <label htmlFor="file_button_mobile">
           Adjuntar archivo <span>{!isEmptyFile ? <CheckIcon /> : null}</span>
