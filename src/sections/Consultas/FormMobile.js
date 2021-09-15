@@ -32,8 +32,6 @@ const FormMobile = ({
 
   const isEmptyFile = !file
 
-  console.log(isEmptyFile)
-
   return (
     <form
       onSubmit={(e) => {
